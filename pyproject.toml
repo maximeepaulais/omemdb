@@ -1,3 +1,10 @@
-[build-system]
-requires = ["setuptools", "wheel"] 
-build-backend = "setuptools.build_meta"
+[project]
+name = "Omemdb"
+version = "3.1.0"
+description = "Omemdb"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "setuptools",
+    "wheel",
+]
