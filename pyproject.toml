@@ -1,6 +1,6 @@
 [build-system]
 # We must use a version older than 70.0.0 to keep pkg_resources available
-requires = ["setuptools<70.0.0", "wheel", "pkg_resources"] 
+requires = ["setuptools>=61.0", "wheel"] 
 build-backend = "setuptools.build_meta"
 
 [project]
