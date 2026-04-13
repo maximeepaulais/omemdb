@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-from pkg_resources import parse_requirements
 import os
 
 REPO_AND_PACKAGE_NAME = "omemdb"
@@ -7,8 +6,13 @@ REPO_AND_PACKAGE_NAME = "omemdb"
 with open(os.path.join(REPO_AND_PACKAGE_NAME, "version.py")) as f:
     version = f.read().split("=")[1].strip().strip("'").strip('"')
 
-with open("requirements.txt", "r") as f:
-    requirements = [str(r) for r in parse_requirements(f.read())]
+def read_requirements(path):
+    with open(path, "r") as f:
+        return [
+            line.strip()
+            for line in f
+            if not line.strip().startswith("#") and line.strip()
+        ]
 
 setup(
     name=REPO_AND_PACKAGE_NAME,
