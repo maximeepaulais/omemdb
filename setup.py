@@ -14,6 +14,8 @@ def read_requirements(path):
             if not line.strip().startswith("#") and line.strip()
         ]
 
+requirements = read_requirements("requirements.txt")
+
 setup(
     name=REPO_AND_PACKAGE_NAME,
     version=version,
